@@ -30,10 +30,15 @@ net stop bits
 net stop wuauserv
 net stop cryptsvc
 ECHO Renaming Folders
+
+REM Deletes old folders in case they exist
 del softwaredistribution.bak
 del catroot2.bak
+
+REM Actual Rename
 ren %systemroot%\softwaredistribution softwaredistribution.bak
 ren %systemroot%\system32\catroot2 catroot2.bak
+
 ECHO NOW REBOOT
 pause
 GOTO begin
